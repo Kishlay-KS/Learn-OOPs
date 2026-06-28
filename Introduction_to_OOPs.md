@@ -19,7 +19,7 @@ Object Oriented Programming - Using classes or objects to generalise the code an
 **Object** - An instance of a class, memory is allocated for objects and not for classes.
 
 ### Attributes and Methods
-- **Attributes** - These define the state of the object at any moment in time
+- **Attributes** - These define the state of the object at any moment in time - Also called as Instance Variables
 - **Methods** - These define the functionality that the object could behave as
 
 ### Example
@@ -45,3 +45,12 @@ em = null;  // GC will clean this object
 ### Heap
 - All objects created using `new` are stored in the heap
 - Heap memory is managed by the Garbage Collector
+
+
+
+Constructors - should not have a return type
+System.out.printf("Something : %.2f\n", balance); for printing decimals
+
+Constructor
+    A special member function that is called automatically when an object is created.
+    Same as class name, if not created, uses default constructor - it does not initializes most of the attributes
