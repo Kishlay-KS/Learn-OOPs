@@ -1,0 +1,41 @@
+1.) Encapsulation - Data hiding (attributes within a class are not directly exposed)
+                  - Uses private, protected, public access modifiers to restrict the access of attributes.
+                  - Have getters and setters with public visibility to interact woth properties
+                  - Some core business logic and complexities can be marked private which can be used by public simple methods to simplify the understanding and stopping the logic exposing.
+                  - Therefore it binds the data and methods together into a single unit.
+
+2.) Access Modifiers - Used for encapsulation, controlled access, modularity and security, flexibility.
+                     - public : accessible everywhere, within the same class, subclass and same program.
+                     - private : accessible only within the class where it is declared.
+                     - protected : accesible inside the same class and by subclasses, but not accessible outside the class hierarchy.
+                     - default : private access modifier
+
+3.) Inheritance - allows a class (subclass) to inherit the attributes (fields) and behaviors (methods) of another class (superclass).
+                - In Java, this concept allows a subclass to inherit or extend the functionality of a superclass, enabling the subclass to reuse code and, in many cases, modify or add new behavior.
+                - Single Inheritance : a one-to-one relationship is established.
+                  e.g. Java : class Dog extends Animal
+                       C++ : class Dog : public Animal
+                - Multilevel Inheritance : a chain of inheriting classes
+                  e.g. Java : class Mammal extends Animal {}
+                              class Dog extends Mammal {}
+                       C++ : class Mammal : public Animal {}
+                             class Dog : public Mammal {}
+                - Hierarchial Inheritance : many subclasses derive from a single parent/base class.
+                  e.g. Java : class Dog extends Animal {}
+                              class Cat extends Animal {}
+                       C++ : class Dog : public Animal {}
+                             class Cat : public Animal {}
+                
+    Method Overriding - @Override annotation is used.
+                      - method in the child class cannot have a more restrictive access modifier than the parent class.
+                      - only public or protected methods can be overridden
+    Super keyword - It is used to access parent class members and invoke the parent class constructor.
+    Method Overloading - When multiple methods have the same name but different parameter lists (number, type or order of parameters)
+                - Multiple Inheritance : when a class inherits from 2 or more parent classes, it causes a diamond problem. Java avoids the usage of multiple inheritance.
+
+4.) Polymorphism - it allows the same method or object to perform different tasks depending on the context.
+                 - Complie-Time / Static Polymorphism : The compiler determines which method to invoke at the compile time based on method's signature.
+                   It is achieved through method overloading or operator overloading (not supported in Java).
+                 - Run-Time / Dynamic Polymorphism : Occurs at run time and is achieved through method overriding.
+                   This occurs due to the dynamic method dispatch mechanism, where the JVM decides which method of a subclass to call based on the actual object type (not the reference type) at runtime.
+                ** Static methods cannot be overridden
