@@ -1,0 +1,47 @@
+1.) Relationships - How do objects interact with each other.
+    a.) Association Relationship : how do objects use and interact with each other.
+            * one to one - one instance of a class is related exactly to one instance of another class.
+              e.g. Person class and Passport class
+            * one to many - one instance of a class is related to multiple instances of another class.
+              e.g. Teacher class and Student class
+            * many to many - multiple instances of a class are assoicated with multiple instances of another class.
+             e.g. Student class and Course class
+    
+    b.) Aggregation Relationship : Specialized form of association which represents a whole-part relationship where whole and part can exist independently.
+        e.g. Department class may have multiple Employee objects, but the employees can exist independent of the department.
+        // Department Class
+        class Department {
+            private List<Employee> employees;
+
+            public Department(List<Employee> employees) {
+                this.employees = employees;
+            }
+        }
+
+        // Employee Class
+        class Employee {
+            private String name;
+
+            public Employee(String name) {
+                this.name = name;
+            }
+        }
+        - Employee objects are aggregated into a Department object. Even if the Department object is deleted, the Employee objects can continue to exist.
+        - Relationship is less tightly coupled compared to composition.
+    c.) Composition : Stricter form of aggregation where if whole is destroyed, the parts are also destroyed. It represents a part-of relationship.
+        e.g. House class and Room objects.
+        - The lifecycle of the "part" is entirely dependent on the "whole."
+        - Relationship is tightly coupled.
+
+2.) Object Cloning : Object cloning refers to creating an exact copy (or a near-identical copy) of an object. The cloned object has the same structure and data as the original but occupies a different memory location.
+In Java, cloning is supported by the Cloneable interface and the Object class's clone() method.
+
+    * Cloneable Interface - The Cloneable interface is a marker interface (it has no methods). Its purpose is to signal to the Java Virtual Machine (JVM) that the clone() method of a class is safe to invoke.
+    * Clone Method - The clone() method is defined in the Object class. By default, it performs a shallow copy of the object. When invoked, it:
+                     Allocates a new memory location for the cloned object.
+                     Copies the field values (primitives are copied, references are copied but not the objects they refer to).
+    
+    * Shallow Cloning - The new object will have the same values for all primitive fields, and references to the same memory locations for any reference-type fields (e.g., objects, arrays, or collections).
+                      - This means that while the cloned object is distinct from the original, any modifications to shared references will be reflected in both objects. Shallow cloning is done using clone() method.
+    * Deep Cloning - Deep cloning ensures that a completely independent copy of the object is created, including all nested objects.
+                   - This can be done using the clone() method recursively.
